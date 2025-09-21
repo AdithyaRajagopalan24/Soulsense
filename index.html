@@ -1,164 +1,127 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #4689cc; -webkit-text-stroke: #4689cc}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #8cd3fe; -webkit-text-stroke: #8cd3fe}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #c27e65; -webkit-text-stroke: #c27e65}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #c1c1c1; -webkit-text-stroke: #c1c1c1}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #c1c1c1; -webkit-text-stroke: #c1c1c1; min-height: 14.0px}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #cacaca; -webkit-text-stroke: #cacaca}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #cdad6a; -webkit-text-stroke: #cdad6a}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #598a43; -webkit-text-stroke: #598a43}
-    span.s1 {font-kerning: none; color: #6d6d6d; background-color: #181818; -webkit-text-stroke: 0px #6d6d6d}
-    span.s2 {font-kerning: none; background-color: #181818}
-    span.s3 {font-kerning: none; color: #c1c1c1; background-color: #181818; -webkit-text-stroke: 0px #c1c1c1}
-    span.s4 {font-kerning: none; color: #8cd3fe; background-color: #181818; -webkit-text-stroke: 0px #8cd3fe}
-    span.s5 {font-kerning: none; color: #c27e65; background-color: #181818; -webkit-text-stroke: 0px #c27e65}
-    span.s6 {font-kerning: none; color: #4689cc; background-color: #181818; -webkit-text-stroke: 0px #4689cc}
-    span.s7 {font-kerning: none; color: #cdad6a; background-color: #181818; -webkit-text-stroke: 0px #cdad6a}
-    span.s8 {font-kerning: none; color: #cacaca; background-color: #181818; -webkit-text-stroke: 0px #cacaca}
-    span.s9 {font-kerning: none}
-    span.s10 {font-kerning: none; color: #a7c598; background-color: #181818; -webkit-text-stroke: 0px #a7c598}
-    span.s11 {font-kerning: none; color: #d4d69a; background-color: #181818; -webkit-text-stroke: 0px #d4d69a}
-    span.s12 {font-kerning: none; color: #42b3ff; background-color: #181818; -webkit-text-stroke: 0px #42b3ff}
-    span.s13 {font-kerning: none; color: #b76fb3; background-color: #181818; -webkit-text-stroke: 0px #b76fb3}
-    span.s14 {font-kerning: none; color: #598a43; background-color: #181818; -webkit-text-stroke: 0px #598a43}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoulSense AI - Your Personal Wellness Companion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --calm-blue: #79a3b1;
+            --calm-green: #d0e8e0;
+            --light-gray: #f0f4f8;
+            --dark-text: #333;
+            --light-text: #555;
+            --font-stack: 'Open Sans', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-stack);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--dark-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            transition: background-image 0.5s ease-in-out;
+        }
+
+        .content-container {
+            max-width: 600px;
+            padding: 2rem;
+            text-align: center;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--calm-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            color: #b76e79;
+            padding: 1rem;
+            border: 1px solid #b76e79;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        df-messenger {
+            z-index: 999;
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            --df-messenger-button-titlebar-color: var(--calm-blue);
+            --df-messenger-chat-background-color: var(--light-gray);
+            --df-messenger-bot-message: var(--calm-green);
+            --df-messenger-user-message: var(--calm-blue);
+            --df-messenger-font-family: var(--font-stack);
+            --df-messenger-message-bot-background: #fff;
+            --df-messenger-message-user-background: #d0e8e0;
+        }
+    </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!</span><span class="s2">DOCTYPE</span><span class="s3"> </span><span class="s4">html</span><span class="s1">&gt;</span></p>
-<p class="p1"><span class="s1">&lt;</span><span class="s2">html</span><span class="s3"> </span><span class="s4">lang</span><span class="s3">=</span><span class="s5">"en"</span><span class="s1">&gt;</span></p>
-<p class="p1"><span class="s1">&lt;</span><span class="s2">head</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;</span><span class="s6">meta</span><span class="s3"> </span><span class="s2">charset</span><span class="s3">=</span><span class="s5">"UTF-8"</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;</span><span class="s6">meta</span><span class="s3"> </span><span class="s4">name</span><span class="s3">=</span><span class="s2">"viewport"</span><span class="s3"> </span><span class="s4">content</span><span class="s3">=</span><span class="s2">"width=device-width, initial-scale=1.0"</span><span class="s1">&gt;</span></p>
-<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;</span><span class="s6">title</span><span class="s1">&gt;</span><span class="s2">SoulSense AI - Your Personal Wellness Companion</span><span class="s1">&lt;/</span><span class="s6">title</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;</span><span class="s6">link</span><span class="s3"> </span><span class="s4">rel</span><span class="s3">=</span><span class="s2">"preconnect"</span><span class="s3"> </span><span class="s4">href</span><span class="s3">=</span><span class="s2">"https://fonts.googleapis.com"</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;</span><span class="s6">link</span><span class="s3"> </span><span class="s4">rel</span><span class="s3">=</span><span class="s2">"preconnect"</span><span class="s3"> </span><span class="s4">href</span><span class="s3">=</span><span class="s2">"https://fonts.gstatic.com"</span><span class="s3"> </span><span class="s4">crossorigin</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;</span><span class="s6">link</span><span class="s3"> </span><span class="s4">href</span><span class="s3">=</span><span class="s2">"https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&amp;display=swap"</span><span class="s3"> </span><span class="s4">rel</span><span class="s3">=</span><span class="s2">"stylesheet"</span><span class="s1">&gt;</span></p>
-<p class="p5"><span class="s2"><span class="Apple-converted-space">    </span></span></p>
-<p class="p1"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;</span><span class="s2">style</span><span class="s1">&gt;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s7">:root</span><span class="s2"> {</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">--calm-blue</span><span class="s2">: </span><span class="s5">#79a3b1</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">--calm-green</span><span class="s2">: </span><span class="s5">#d0e8e0</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">--light-gray</span><span class="s2">: </span><span class="s5">#f0f4f8</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">--dark-text</span><span class="s2">: </span><span class="s5">#333</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">--light-text</span><span class="s2">: </span><span class="s5">#555</span><span class="s2">;</span></p>
-<p class="p3"><span class="s8"><span class="Apple-converted-space">            </span></span><span class="s4">--font-stack</span><span class="s8">: </span><span class="s2">'Open Sans'</span><span class="s8">, </span><span class="s2">sans-serif</span><span class="s8">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p5"><span class="s9"></span><br></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s7">body</span><span class="s2"> {</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">margin</span><span class="s2">: </span><span class="s10">0</span><span class="s2">;</span></p>
-<p class="p2"><span class="s8"><span class="Apple-converted-space">            </span></span><span class="s2">font-family</span><span class="s8">: </span><span class="s11">var</span><span class="s8">(</span><span class="s2">--font-stack</span><span class="s8">);</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">background</span><span class="s2">: </span><span class="s11">linear-gradient</span><span class="s2">(</span><span class="s10">135deg</span><span class="s2">, </span><span class="s5">#f5f7fa</span><span class="s2"> </span><span class="s10">0%</span><span class="s2">, </span><span class="s5">#c3cfe2</span><span class="s2"> </span><span class="s10">100%</span><span class="s2">);</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">color</span><span class="s2">: </span><span class="s11">var</span><span class="s2">(</span><span class="s4">--dark-text</span><span class="s2">);</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">display</span><span class="s2">: </span><span class="s5">flex</span><span class="s2">;</span></p>
-<p class="p2"><span class="s8"><span class="Apple-converted-space">            </span></span><span class="s2">justify-content</span><span class="s8">: </span><span class="s5">center</span><span class="s8">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">align-items</span><span class="s2">: </span><span class="s5">center</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">min-height</span><span class="s2">: </span><span class="s10">100vh</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">transition</span><span class="s2">: background-image </span><span class="s10">0.5s</span><span class="s2"> </span><span class="s5">ease-in-out</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p5"><span class="s9"></span><br></p>
-<p class="p7"><span class="s8"><span class="Apple-converted-space">        </span></span><span class="s2">.content-container</span><span class="s8"> {</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">max-width</span><span class="s2">: </span><span class="s10">600px</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">padding</span><span class="s2">: </span><span class="s10">2rem</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">text-align</span><span class="s2">: </span><span class="s5">center</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">transition</span><span class="s2">: opacity </span><span class="s10">0.5s</span><span class="s2"> </span><span class="s5">ease</span><span class="s2">, transform </span><span class="s10">0.5s</span><span class="s2"> </span><span class="s5">ease</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p5"><span class="s9"></span><br></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s7">h1</span><span class="s2"> {</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">font-size</span><span class="s2">: </span><span class="s10">2.5rem</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">color</span><span class="s2">: </span><span class="s11">var</span><span class="s2">(</span><span class="s4">--calm-blue</span><span class="s2">);</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">margin-bottom</span><span class="s2">: </span><span class="s10">0.5rem</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p5"><span class="s9"></span><br></p>
-<p class="p7"><span class="s8"><span class="Apple-converted-space">        </span></span><span class="s2">.disclaimer</span><span class="s8"> {</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">font-size</span><span class="s2">: </span><span class="s10">0.8rem</span><span class="s2">;</span></p>
-<p class="p8"><span class="s8"><span class="Apple-converted-space">            </span></span><span class="s4">color</span><span class="s8">: </span><span class="s5">#b76e79</span><span class="s8">; </span><span class="s2">/* A slightly more serious color for the disclaimer */</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">padding</span><span class="s2">: </span><span class="s10">1rem</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">border</span><span class="s2">: </span><span class="s10">1px</span><span class="s2"> </span><span class="s5">solid</span><span class="s2"> </span><span class="s5">#b76e79</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">border-radius</span><span class="s2">: </span><span class="s10">8px</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">margin</span><span class="s2">: </span><span class="s10">1.5rem</span><span class="s2"> </span><span class="s10">0</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p5"><span class="s9"></span><br></p>
-<p class="p1"><span class="s8"><span class="Apple-converted-space">        </span></span><span class="s2">df-messenger</span><span class="s8"> {</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">z-index</span><span class="s2">: </span><span class="s10">999</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">position</span><span class="s2">: </span><span class="s5">fixed</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">bottom</span><span class="s2">: </span><span class="s10">2rem</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">right</span><span class="s2">: </span><span class="s10">2rem</span><span class="s2">;</span></p>
-<p class="p2"><span class="s8"><span class="Apple-converted-space">            </span></span><span class="s2">--df-messenger-button-titlebar-color</span><span class="s8">: </span><span class="s11">var</span><span class="s8">(</span><span class="s2">--calm-blue</span><span class="s8">);</span></p>
-<p class="p2"><span class="s8"><span class="Apple-converted-space">            </span></span><span class="s2">--df-messenger-chat-background-color</span><span class="s8">: </span><span class="s11">var</span><span class="s8">(</span><span class="s2">--light-gray</span><span class="s8">);</span></p>
-<p class="p2"><span class="s8"><span class="Apple-converted-space">            </span></span><span class="s2">--df-messenger-bot-message</span><span class="s8">: </span><span class="s11">var</span><span class="s8">(</span><span class="s2">--calm-green</span><span class="s8">);</span></p>
-<p class="p2"><span class="s8"><span class="Apple-converted-space">            </span></span><span class="s2">--df-messenger-user-message</span><span class="s8">: </span><span class="s11">var</span><span class="s8">(</span><span class="s2">--calm-blue</span><span class="s8">);</span></p>
-<p class="p2"><span class="s8"><span class="Apple-converted-space">            </span></span><span class="s2">--df-messenger-font-family</span><span class="s8">: </span><span class="s11">var</span><span class="s8">(</span><span class="s2">--font-stack</span><span class="s8">);</span></p>
-<p class="p2"><span class="s8"><span class="Apple-converted-space">            </span></span><span class="s2">--df-messenger-message-bot-background</span><span class="s8">: </span><span class="s5">#fff</span><span class="s8">;</span></p>
-<p class="p2"><span class="s8"><span class="Apple-converted-space">            </span></span><span class="s2">--df-messenger-message-user-background</span><span class="s8">: </span><span class="s5">#d0e8e0</span><span class="s8">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;/</span><span class="s2">style</span><span class="s1">&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/</span><span class="s2">head</span><span class="s1">&gt;</span></p>
-<p class="p1"><span class="s1">&lt;</span><span class="s2">body</span><span class="s1">&gt;</span></p>
-<p class="p5"><span class="s9"></span><br></p>
-<p class="p3"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;</span><span class="s6">main</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"content-container"</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s3"><span class="Apple-converted-space">        </span></span><span class="s1">&lt;</span><span class="s6">div</span><span class="s3"> </span><span class="s4">class</span><span class="s3">=</span><span class="s2">"header-content"</span><span class="s1">&gt;</span></p>
-<p class="p4"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;</span><span class="s6">h1</span><span class="s1">&gt;</span><span class="s2">SoulSense AI</span><span class="s1">&lt;/</span><span class="s6">h1</span><span class="s1">&gt;</span></p>
-<p class="p4"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;</span><span class="s6">p</span><span class="s1">&gt;</span><span class="s2">Your AI companion for emotional support and self-care. It's a safe space to explore your feelings on your wellness journey.</span><span class="s1">&lt;/</span><span class="s6">p</span><span class="s1">&gt;</span></p>
-<p class="p4"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;</span><span class="s6">p</span><span class="s2"> </span><span class="s4">class</span><span class="s2">=</span><span class="s5">"disclaimer"</span><span class="s1">&gt;</span></p>
-<p class="p4"><span class="s2"><span class="Apple-converted-space">                </span>**Disclaimer:** SoulSense AI is for informational and emotional support purposes only and is not a substitute for professional mental health care. Please seek advice from a qualified healthcare provider for any questions you may have regarding a medical or mental health condition.</span></p>
-<p class="p4"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;/</span><span class="s6">p</span><span class="s1">&gt;</span></p>
-<p class="p4"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;</span><span class="s6">p</span><span class="s1">&gt;</span><span class="s2">Click the chat bubble in the bottom right corner to start your conversation.</span><span class="s1">&lt;/</span><span class="s6">p</span><span class="s1">&gt;</span></p>
-<p class="p4"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s1">&lt;/</span><span class="s6">div</span><span class="s1">&gt;</span></p>
-<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;/</span><span class="s6">main</span><span class="s1">&gt;</span></p>
-<p class="p5"><span class="s9"></span><br></p>
-<p class="p1"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;</span><span class="s2">df-messenger</span></p>
-<p class="p3"><span class="s3"><span class="Apple-converted-space">        </span></span><span class="s4">project-id</span><span class="s3">=</span><span class="s2">"your-project-id"</span></p>
-<p class="p3"><span class="s3"><span class="Apple-converted-space">        </span></span><span class="s4">agent-id</span><span class="s3">=</span><span class="s2">"your-agent-id"</span></p>
-<p class="p2"><span class="s3"><span class="Apple-converted-space">        </span></span><span class="s2">language-code</span><span class="s3">=</span><span class="s5">"en"</span></p>
-<p class="p2"><span class="s3"><span class="Apple-converted-space">        </span></span><span class="s2">max-query-length</span><span class="s3">=</span><span class="s5">"-1"</span><span class="s1">&gt;</span></p>
-<p class="p1"><span class="s3"><span class="Apple-converted-space">        </span></span><span class="s1">&lt;</span><span class="s2">df-messenger-chat-bubble</span><span class="s3"> </span><span class="s4">chat-title</span><span class="s3">=</span><span class="s5">"SoulSense AI"</span><span class="s1">&gt;&lt;/</span><span class="s2">df-messenger-chat-bubble</span><span class="s1">&gt;</span></p>
-<p class="p1"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;/</span><span class="s2">df-messenger</span><span class="s1">&gt;</span></p>
-<p class="p5"><span class="s9"></span><br></p>
-<p class="p3"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;</span><span class="s6">script</span><span class="s8"> </span><span class="s4">src</span><span class="s8">=</span><span class="s2">"https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"</span><span class="s1">&gt;&lt;/</span><span class="s6">script</span><span class="s1">&gt;</span></p>
-<p class="p1"><span class="s3"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;</span><span class="s2">script</span><span class="s1">&gt;</span></p>
-<p class="p3"><span class="s8"><span class="Apple-converted-space">        </span></span><span class="s4">document</span><span class="s8">.</span><span class="s11">addEventListener</span><span class="s8">(</span><span class="s2">'DOMContentLoaded'</span><span class="s8">, () </span><span class="s6">=&gt;</span><span class="s8"> {</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s6">const</span><span class="s2"> </span><span class="s12">dfMessenger</span><span class="s2"> = </span><span class="s4">document</span><span class="s2">.</span><span class="s11">querySelector</span><span class="s2">(</span><span class="s5">'df-messenger'</span><span class="s2">);</span></p>
-<p class="p3"><span class="s8"><span class="Apple-converted-space">            </span></span><span class="s6">const</span><span class="s8"> </span><span class="s12">mainContent</span><span class="s8"> = </span><span class="s4">document</span><span class="s8">.</span><span class="s11">querySelector</span><span class="s8">(</span><span class="s2">'.content-container'</span><span class="s8">);</span></p>
-<p class="p5"><span class="s9"></span><br></p>
-<p class="p8"><span class="s8"><span class="Apple-converted-space">            </span></span><span class="s2">// Listen for the chat window to open/close</span></p>
-<p class="p3"><span class="s8"><span class="Apple-converted-space">            </span></span><span class="s12">dfMessenger</span><span class="s8">.</span><span class="s11">addEventListener</span><span class="s8">(</span><span class="s2">'df-chat-open-changed'</span><span class="s8">, (</span><span class="s4">event</span><span class="s8">) </span><span class="s6">=&gt;</span><span class="s8"> {</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s13">if</span><span class="s2"> (</span><span class="s4">event</span><span class="s2">.</span><span class="s4">detail</span><span class="s2">.</span><span class="s4">isOpen</span><span class="s2">) {</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">                    </span></span><span class="s12">mainContent</span><span class="s2">.</span><span class="s4">style</span><span class="s2">.</span><span class="s4">opacity</span><span class="s2"> = </span><span class="s5">'0'</span><span class="s2">; </span><span class="s14">// Fade out main content</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">                    </span></span><span class="s12">mainContent</span><span class="s2">.</span><span class="s4">style</span><span class="s2">.</span><span class="s4">transform</span><span class="s2"> = </span><span class="s5">'scale(0.95)'</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">                </span>} </span><span class="s13">else</span><span class="s2"> {</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">                    </span></span><span class="s12">mainContent</span><span class="s2">.</span><span class="s4">style</span><span class="s2">.</span><span class="s4">opacity</span><span class="s2"> = </span><span class="s5">'1'</span><span class="s2">; </span><span class="s14">// Fade in main content</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">                    </span></span><span class="s12">mainContent</span><span class="s2">.</span><span class="s4">style</span><span class="s2">.</span><span class="s4">transform</span><span class="s2"> = </span><span class="s5">'scale(1)'</span><span class="s2">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p5"><span class="s9"></span><br></p>
-<p class="p8"><span class="s8"><span class="Apple-converted-space">            </span></span><span class="s2">// Listen for responses to trigger custom actions based on bot intent</span></p>
-<p class="p3"><span class="s8"><span class="Apple-converted-space">            </span></span><span class="s12">dfMessenger</span><span class="s8">.</span><span class="s11">addEventListener</span><span class="s8">(</span><span class="s2">'df-response-received'</span><span class="s8">, (</span><span class="s4">event</span><span class="s8">) </span><span class="s6">=&gt;</span><span class="s8"> {</span></p>
-<p class="p2"><span class="s8"><span class="Apple-converted-space">                </span></span><span class="s6">const</span><span class="s8"> </span><span class="s12">intentName</span><span class="s8"> = </span><span class="s2">event</span><span class="s8">.</span><span class="s2">detail</span><span class="s8">.</span><span class="s2">response</span><span class="s8">.</span><span class="s2">queryResult</span><span class="s8">.</span><span class="s2">intent</span><span class="s8">.</span><span class="s2">displayName</span><span class="s8">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s6">const</span><span class="s2"> </span><span class="s12">body</span><span class="s2"> = </span><span class="s4">document</span><span class="s2">.</span><span class="s4">body</span><span class="s2">;</span></p>
-<p class="p5"><span class="s9"></span><br></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s13">if</span><span class="s2"> (</span><span class="s12">intentName</span><span class="s2"> === </span><span class="s5">'Stress-Relief'</span><span class="s2">) {</span></p>
-<p class="p3"><span class="s8"><span class="Apple-converted-space">                    </span></span><span class="s12">body</span><span class="s8">.</span><span class="s4">style</span><span class="s8">.</span><span class="s4">backgroundImage</span><span class="s8"> = </span><span class="s2">'linear-gradient(135deg, #c7e5e3 0%, #a4d2c7 100%)'</span><span class="s8">;</span></p>
-<p class="p3"><span class="s8"><span class="Apple-converted-space">                    </span></span><span class="s4">console</span><span class="s8">.</span><span class="s11">log</span><span class="s8">(</span><span class="s2">'Bot is providing stress relief techniques. Website background changed.'</span><span class="s8">);</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">                </span>} </span><span class="s13">else</span><span class="s2"> </span><span class="s13">if</span><span class="s2"> (</span><span class="s12">intentName</span><span class="s2"> === </span><span class="s5">'Positive-Affirmations'</span><span class="s2">) {</span></p>
-<p class="p3"><span class="s8"><span class="Apple-converted-space">                    </span></span><span class="s12">body</span><span class="s8">.</span><span class="s4">style</span><span class="s8">.</span><span class="s4">backgroundImage</span><span class="s8"> = </span><span class="s2">'linear-gradient(135deg, #fce5d4 0%, #fbd8b9 100%)'</span><span class="s8">;</span></p>
-<p class="p3"><span class="s8"><span class="Apple-converted-space">                    </span></span><span class="s4">console</span><span class="s8">.</span><span class="s11">log</span><span class="s8">(</span><span class="s2">'Bot is providing affirmations. Website background changed.'</span><span class="s8">);</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">                </span>} </span><span class="s13">else</span><span class="s2"> {</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">                    </span></span><span class="s14">// Reset to default</span></p>
-<p class="p3"><span class="s8"><span class="Apple-converted-space">                    </span></span><span class="s12">body</span><span class="s8">.</span><span class="s4">style</span><span class="s8">.</span><span class="s4">backgroundImage</span><span class="s8"> = </span><span class="s2">'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)'</span><span class="s8">;</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p6"><span class="s2"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p1"><span class="s8"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;/</span><span class="s2">script</span><span class="s1">&gt;</span></p>
-<p class="p5"><span class="s9"></span><br></p>
-<p class="p1"><span class="s1">&lt;/</span><span class="s2">body</span><span class="s1">&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/</span><span class="s2">html</span><span class="s1">&gt;</span></p>
+
+    <main class="content-container">
+        <div class="header-content">
+            <h1>SoulSense AI</h1>
+            <p>Your AI companion for emotional support and self-care. It's a safe space to explore your feelings on your wellness journey.</p>
+            <p class="disclaimer">
+                **Disclaimer:** SoulSense AI is for informational and emotional support purposes only and is not a substitute for professional mental health care. Please seek advice from a qualified healthcare provider for any questions you may have regarding a medical or mental health condition.
+            </p>
+            <p>Click the chat bubble in the bottom right corner to start your conversation.</p>
+        </div>
+    </main>
+
+    <df-messenger
+        project-id="your-project-id"
+        agent-id="your-agent-id"
+        language-code="en"
+        max-query-length="-1">
+        <df-messenger-chat-bubble chat-title="SoulSense AI"></df-messenger-chat-bubble>
+    </df-messenger>
+
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dfMessenger = document.querySelector('df-messenger');
+            const mainContent = document.querySelector('.content-container');
+
+            dfMessenger.addEventListener('df-chat-open-changed', (event) => {
+                if (event.detail.isOpen) {
+                    mainContent.style.opacity = '0';
+                    mainContent.style.transform = 'scale(0.95)';
+                } else {
+                    mainContent.style.opacity = '1';
+                    mainContent.style.transform = 'scale(1)';
+                }
+            });
+
+            
+            dfMessenger.addEventListener('df-response-received', (event) => {
+                const intentName = event.detail.response.queryResult.intent.displayName;
+                const body = document.body;
+
+                if (intentName === 'Stress-Relief') {
+                    body.style.backgroundImage = 'linear-gradient(135deg, #c7e5e3 0%, #a4d2c7 100%)';
+                    console.log('Bot is providing stress relief techniques. Website background changed.');
+                } else if (intentName === 'Positive-Affirmations') {
+                    body.style.backgroundImage = 'linear-gradient(135deg, #fce5d4 0%, #fbd8b9 100%)';
+                    console.log('Bot is providing affirmations. Website background changed.');
+                } else {
+                    
+                    body.style.backgroundImage = 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)';
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
