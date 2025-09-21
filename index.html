@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
     
     <style>
         :root {
@@ -46,6 +47,7 @@
         .disclaimer {
             font-size: 0.8rem;
             color: #b76e79;
+            color: #b76e79;
             padding: 1rem;
             border: 1px solid #b76e79;
             border-radius: 8px;
@@ -66,6 +68,19 @@
             --df-messenger-message-user-background: #d0e8e0;
         }
     </style>
+    <style>
+        df-messenger {
+            z-index: 999;
+            position: fixed;
+            --df-messenger-font-color: #000;
+            --df-messenger-font-family: Google Sans;
+            --df-messenger-chat-background: #f3f6fc;
+            --df-messenger-message-user-background: #d3e3fd;
+            --df-messenger-message-bot-background: #fff;
+            bottom: 16px;
+            right: 16px;
+        }
+    </style>
 </head>
 <body>
 
@@ -80,10 +95,8 @@
         </div>
     </main>
 
-    <df-messenger
-        project-id="your-project-id"
-        agent-id="your-agent-id"
-        language-code="en"
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    <df-messenger location="us-central1" project-id="project-soulsense" agent-id="9f67c7a4-1ed1-4eca-9d50-3332acace6f2" language-code="en"
         max-query-length="-1">
         <df-messenger-chat-bubble chat-title="SoulSense AI"></df-messenger-chat-bubble>
     </df-messenger>
@@ -123,5 +136,18 @@
         });
     </script>
 
+    <style>
+        df-messenger {
+            z-index: 999;
+            position: fixed;
+            --df-messenger-font-color: #000;
+            --df-messenger-font-family: Google Sans;
+            --df-messenger-chat-background: #f3f6fc;
+            --df-messenger-message-user-background: #d3e3fd;
+            --df-messenger-message-bot-background: #fff;
+            bottom: 16px;
+            right: 16px;
+        }
+    </style>
 </body>
 </html>
