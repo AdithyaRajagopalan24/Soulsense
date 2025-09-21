@@ -1,3 +1,4 @@
 Flask
 google-cloud-dialogflow-cx
 google-generativeai
+gunicorn
